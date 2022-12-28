@@ -1,6 +1,6 @@
 //Chess chess;
 Hexagon hexagon;
-float map_dy=0;  // 利用 mouseDragged() 上下移動地圖
+float map_dy=0;  // 利用 mouseDragged() mouseWheel() 上下捲動地圖
 PImage img;
 
 void setup(){

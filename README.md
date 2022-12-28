@@ -12,7 +12,8 @@
 
 ## 程式實作
 - 畫出地圖
-- `mouseDragged()` 可移動地圖
+- `mouseDragged()` 可捲動地圖
+- `mouseWheel()` 可捲動地圖
 - `class Cless` 方便之後畫出棋子
 - `class Hexagon` 畫出地圖上的六角形格子
 - `table1` 表示戰鬥傷害表
