@@ -1,6 +1,6 @@
 class Chess{
   int type;  // 棋的類型 1:回合棋 2:指揮棋 3:戰術棋 4:戰鬥棋
-  void draw(int x, int y) {
+  void draw(float x, float y) {  // 在地圖世界的位移量，單位 pixel
     
   }
 }
@@ -41,31 +41,31 @@ class Chess4Unit extends Chess {
     this(0, "11", "31R", 0, 4, 5);
   }
   
-  void draw(int x, int y) {
-    //int x = mouseX - 30, y = mouseY - 30;
-    textSize(8);
+  void draw(float x, float y) {
+    textAlign(CENTER, CENTER);
     pushMatrix();
-      translate(x, y - map_dy);
+      translate(x * map_scale + map_dx, y * map_scale + map_dy);
       if(flag == 0) fill(#A1ABE6);  // KMT
       if(flag == 1) fill(#F1BDCC);  // CCP
-      rect(0, 0, 34, 34);
+      rect(0, 0, 34 * map_scale, 34 * map_scale);
       // 棋子的長寬是 14.3cm/9=15.88mm, 雜誌寫 5/8吋=15.8750mm
       // 六角邊長18mm=39.51px, 所以棋子邊長為 39.51/18*15.875=34.845
       // 也就是：六邊形的高, 可放2個棋子
       fill( bannerColor(no1) );
-      rect(4, 4, 26, 8);
+      rect(4 * map_scale, 4 * map_scale, 26 * map_scale, 8 * map_scale);
       fill(255);
-      textAlign(CENTER, CENTER);
-      text(no1, 34/2, 4+8/2-1);
+      textSize(8*map_scale);
+      text(no1, 34/2 * map_scale, (4+8/2-1) * map_scale);
       
       fill(0);
       pushMatrix();
-        translate(30, 17);
+        translate(30 * map_scale, 17 * map_scale);
         rotate(radians(90));
+        textSize(5 * map_scale);
         text(no2, 0, 0);
       popMatrix();
-      textSize(12);
-      text(combat + "-" + movement, 17, 25);
+      textSize(12 * map_scale);
+      text(combat + "-" + movement, 17 * map_scale, 25 * map_scale);
     popMatrix();
   }
   

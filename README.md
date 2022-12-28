@@ -12,8 +12,8 @@
 
 ## 程式實作
 - 畫出地圖
-- `mouseDragged()` 可捲動地圖
-- `mouseWheel()` 可捲動地圖
+- `mouseDragged()` 可平移/捲動地圖
+- `mouseWheel()` 或 兩指移動 可縮放地圖
 - `class Hexagon` 畫出地圖上的六角形格子
 - `class Chess` 方便畫出棋子，並繼承4種類型的棋
 - `class Chess4Unit extends Chess` 是戰鬥棋
