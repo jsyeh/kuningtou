@@ -2,21 +2,34 @@
 血戰古寧頭: 金門大戰1949 Bloody Kuningtou: Battle of Kinmen 1949
 
 ## 事由
-在「2022互動技術概論」上課時，銘傳資傳大三同學（徐翌洋、鍾沚霖）想要實作桌遊「血戰古寧頭」當成是期末作品。我覺得這個期末作品非常有創意，所以動手實作看看，想要了解這樣的遊戲要怎麼用 Processing 實作出來。
+在「2022互動技術概論」上課時，銘傳資傳大三同學（徐翌洋、鍾沚霖）想實作桌遊「血戰古寧頭」當成期末作品。我覺得這個期末作品非常有創意，便動手實作，想了解這類 Wargame 桌遊要怎麼用 Processing 實作出來。
 
-同學說，這個桌遊是2010年「戰棋雜誌-第1期」裡附的遊戲，所以我隔天2022-12-27(二)在大安殿訂了一本，又在露天向 silvanus0321 訂了另一本。今天拿到第一本雜誌，看完後，建立 GitHub 專案倉庫。
+同學說，這個桌遊是2010年「戰棋雜誌-第1期」裡附的遊戲，所以我隔天12/27在「大安殿」訂了一本，又在露天向 silvanus0321 訂了另一本。今天拿到第一本雜誌，看完後，建立 GitHub 專案倉庫。
 
 - 2022-12-26(一) 上網查相關資料&找賣家，並開始實作
-- 2022-12-27(二) 到大安殿訂雜誌，又在露天拍賣訂了另外一本
+- 2022-12-27(二) 到大安殿訂雜誌，又在露天拍賣加訂一本
 - 2022-12-28(三) 到大安殿拿到雜誌，建立GitHub專案
 
 ## 程式實作
 - 畫出地圖
 - `mouseDragged()` 可捲動地圖
 - `mouseWheel()` 可捲動地圖
-- `class Cless` 方便之後畫出棋子
 - `class Hexagon` 畫出地圖上的六角形格子
-- `table1` 表示戰鬥傷害表
+- `class Chess` 方便畫出棋子，並繼承4種類型的棋
+- `class Chess4Unit extends Chess` 是戰鬥棋
+- `buildAllChess()` 逐一建出棋子
+- `table1` 表示戰鬥傷害表 combat results table (CRT)
+<img width="1028" alt="image" src="https://user-images.githubusercontent.com/3252557/209862631-9b5387c3-e8e8-4998-b6ea-12c39d31ee10.png">
+
+## TODO
+- 要能縮放地圖，並縮放棋子
+- 要為每個棋子準備自己的座標
+- mouse 經過棋子上方時，要有發亮的特效，每個棋子也要能移動
+- 要為不同兵種畫圖
+- 要為每個 Hexagon 格子，設定移動的參數
+- 選定棋子後，要將能移到的 Hexagon 格子發亮，指引能走到哪些地方
+- 之後可讓圖更具象化
+- 之後重構時，Chess 應改名為 [Counter](https://en.wikipedia.org/wiki/Board_wargame#Hex-and-counter)
 
 ## 相關文獻
 - YouTube: [血戰古寧頭：金門大戰1949 教學影片1](https://www.youtube.com/watch?v=GgwFTSTEq1w) 鄭偉成
