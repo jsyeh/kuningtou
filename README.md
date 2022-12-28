@@ -20,11 +20,12 @@
 - `buildAllChess()` 逐一建出棋子
 - `table1` 表示戰鬥傷害表 combat results table (CRT)
 <img width="1028" alt="image" src="https://user-images.githubusercontent.com/3252557/209862631-9b5387c3-e8e8-4998-b6ea-12c39d31ee10.png">
+- 能縮放地圖，並縮放棋子
+- `setPos()` 為每個棋子準備自己的座標
+- mouse 經過棋子上方時，有發亮的特效
 
 ## TODO
-- 要能縮放地圖，並縮放棋子
-- 要為每個棋子準備自己的座標
-- mouse 經過棋子上方時，要有發亮的特效，每個棋子也要能移動
+- 每個棋子也要能移動
 - 要為不同兵種畫圖
 - 要為每個 Hexagon 格子，設定移動的參數
 - 選定棋子後，要將能移到的 Hexagon 格子發亮，指引能走到哪些地方

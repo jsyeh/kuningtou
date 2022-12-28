@@ -20,10 +20,12 @@ void draw(){
     hexagon.draw();
   popMatrix();
   
-  int i=0;
-  for(Chess c : allChess) {
-    c.draw(80 + (i%9)*36, 220 + int(i/9)*36);
-    i++;
+  for (int i=0; i < allChess.size(); i++) {
+    Chess c = allChess.get(i);
+    c.draw();
+    if (c.inside(mouseX, mouseY)) {
+      c.drawRed();  // 畫紅色，確認有順利找到mouse摸到的棋子
+    }
   }
 }
 

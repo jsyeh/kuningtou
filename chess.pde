@@ -1,7 +1,36 @@
 class Chess{
   int type;  // 棋的類型 1:回合棋 2:指揮棋 3:戰術棋 4:戰鬥棋
+  float x, y;  // 在地圖上的座標
+  float w = 34.845, h = 34.845;
+  
+  void setPos(float _x, float _y) {
+    x = _x;
+    y = _y;
+  }
+  
+  boolean inside(float x2, float y2) {
+    // (x2, y2) 在視窗座標系統, 要轉到地圖座標系統
+    // (x, y) 在地圖座標系統
+    float x3 = (x2 - map_dx) / map_scale;
+    float y3 = (y2 - map_dy) / map_scale;
+    if (x < x3 && x3 < x + w && y < y3 && y3 < y + h) return true;
+    else return false;
+  }
+  
+  void draw() {
+    draw(x, y);
+  }
+  
   void draw(float x, float y) {  // 在地圖世界的位移量，單位 pixel
     
+  }
+  
+  void drawRed() {  // 暫時的程式，畫紅色，確認有順利找到mouse摸到的棋子
+    pushMatrix();
+      translate(x * map_scale + map_dx, y * map_scale + map_dy);
+      fill(255, 0, 0, 128);
+      rect(0, 0, 34 * map_scale, 34 * map_scale);
+    popMatrix();
   }
 }
 
@@ -40,7 +69,7 @@ class Chess4Unit extends Chess {
   Chess4Unit() {
     this(0, "11", "31R", 0, 4, 5);
   }
-  
+    
   void draw(float x, float y) {
     textAlign(CENTER, CENTER);
     pushMatrix();
@@ -88,6 +117,7 @@ class Chess4Unit extends Chess {
     return #FF0000;
   }
 }
+
 ArrayList<Chess> allChess;
 void buildAllChess() {
   allChess = new ArrayList<Chess>();
@@ -140,4 +170,8 @@ void buildAllChess() {
   allChess.add(new Chess4Unit(0, "87", "259R", 0, 4, 5) );
   allChess.add(new Chess4Unit(0, "87", "259R", 0, 4, 5) );
 
+  for (int i=0; i < allChess.size(); i++) {
+    Chess c = allChess.get(i);
+    c.setPos(80 + (i%9)*36, 220 + int(i/9)*36);
+  }
 }
