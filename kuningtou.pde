@@ -7,14 +7,20 @@ void setup(){
   size(916,850);
   img = loadImage("kuningtou.jpeg");
   hexagon = new Hexagon();
-  //chess = new Chess();
+  buildAllChess();
+  //chess = new Chess4Unit();
 }
 
 void draw(){
   image(img, 0, map_dy);
   translate(0, map_dy);
   hexagon.draw();
-  //chess.draw();
+  int i=0;
+  for(Chess c : allChess) {
+    c.draw(mouseX - 36*9/2 + (i%9)*36, mouseY - 36*5/2 + int(i/9)*36);
+    i++;
+  }
+  //chess.draw(mouseX, mouseY);
 }
 
 int mouseWheel_dy = 0;
