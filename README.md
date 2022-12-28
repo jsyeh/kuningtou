@@ -10,6 +10,13 @@
 - 2022-12-27(二) 到大安殿訂雜誌，又在露天拍賣訂了另外一本
 - 2022-12-28(三) 到大安殿拿到雜誌，建立GitHub專案
 
+## 程式實作
+- 畫出地圖
+- `mouseDragged()` 可移動地圖
+- `class Cless` 方便之後畫出棋子
+- `class Hexagon` 畫出地圖上的六角形格子
+- `table1` 表示戰鬥傷害表
+
 ## 相關文獻
 - YouTube: [血戰古寧頭：金門大戰1949 教學影片1](https://www.youtube.com/watch?v=GgwFTSTEq1w) 鄭偉成
   - 發佈於 2010年2月12日
