@@ -1,4 +1,5 @@
-Hexagon hexagon;
+Hexagon hexagon = null;;
+Chess selectedChess = null;
 float map_dx = 0, map_dy = 0;  // 利用 mouseDragged() 上下左右移動/捲動地圖
 float map_scale = 1;  // 縮放比例，利用 mouseWheel() 或 兩指移動 來縮放地圖
 float map_cx = 0, map_cy = 0;  // 縮放時的中心點，在縮放時保持在中心
@@ -20,11 +21,13 @@ void draw(){
     hexagon.draw();
   popMatrix();
   
+  selectedChess = null;
   for (int i=0; i < allChess.size(); i++) {
     Chess c = allChess.get(i);
     c.draw();
     if (c.inside(mouseX, mouseY)) {
       c.drawRed();  // 畫紅色，確認有順利找到mouse摸到的棋子
+      selectedChess = c;
     }
   }
 }
@@ -55,14 +58,18 @@ void mouseWheel(MouseEvent event) {
   map_dy = mouseY - map_cy * map_scale;
 }
 
-void mouseDragged(){
-  map_dx += mouseX - pmouseX;
-  map_dy += mouseY - pmouseY;
-  if(map_dx > 0) map_dx = 0;  // 平移時，確保地圖的邊緣不越過在畫面的邊緣
-  if(map_dy > 0) map_dy = 0;  // 平移時，確保地圖的邊緣不越過在畫面的邊緣
-  // 地圖的長寬是916x1302
-  if(map_dx < width - 916*map_scale) map_dx = width - 916*map_scale;
-  if(map_dy < height - 1302*map_scale) map_dy = height - 1302*map_scale;
+void mouseDragged() {
+  if (selectedChess != null) {// 如果有選到棋子時，就移動棋子
+    selectedChess.setPosPlus(mouseX - pmouseX, mouseY - pmouseY);
+  } else {// 如果沒有在棋子的上法，就平移地圖
+    map_dx += mouseX - pmouseX;
+    map_dy += mouseY - pmouseY;
+    if (map_dx > 0) map_dx = 0;  // 平移時，確保地圖的邊緣不越過在畫面的邊緣
+    if (map_dy > 0) map_dy = 0;  // 平移時，確保地圖的邊緣不越過在畫面的邊緣
+    // 地圖的長寬是916x1302
+    if (map_dx < width - 916*map_scale) map_dx = width - 916*map_scale;
+    if (map_dy < height - 1302*map_scale) map_dy = height - 1302*map_scale;
+  }
 }
 
 void mousePressed(){

@@ -8,6 +8,14 @@ class Chess{
     y = _y;
   }
   
+  void setPosPlus(float dx, float dy) {
+    // dx, dy 在視窗座標系統，要轉到地圖座標系統 的比例
+    float dx2 = (dx) / map_scale;
+    float dy2 = (dy) / map_scale;
+    x += dx2;
+    y += dy2;
+  }
+  
   boolean inside(float x2, float y2) {
     // (x2, y2) 在視窗座標系統, 要轉到地圖座標系統
     // (x, y) 在地圖座標系統
