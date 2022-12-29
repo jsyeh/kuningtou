@@ -39,6 +39,8 @@
   - 發佈於 2010年2月12日
 - Steam Community: Tabletop Simulator >  工作坊 > Zero330 的工作坊 > [血戰古寧頭: 金門大戰1949 Bloody Kuningtou: Battle of Kinmen 1949](https://steamcommunity.com/sharedfiles/filedetails/?id=717151124)
   - 發佈於 2016 年 7 月 4 日 下午 5:18
+- BGG: BoardGameGeek [Bloody Kuningtou: Battle of Kinmen 1949 (2009)](https://boardgamegeek.com/boardgame/52824/bloody-kuningtou-battle-kinmen-1949)
+  - 裡面有原作者 WEI-CHENG CHENG 提供的素材圖 [棋正面](https://boardgamegeek.com/image/660587/bloody-kuningtou-battle-kinmen-1949) [棋背面](https://boardgamegeek.com/image/660588/bloody-kuningtou-battle-kinmen-1949)
 - 露天拍賣: [戰棋雜誌 季刊第1期 血戰古寧頭 1949 兵棋雜誌](https://www.ruten.com.tw/item/show?21101238046637)
   - 上架時間： 2011-01-23 10:29:08
 - Yahoo!拍賣: [大安殿實體店面 戰棋雜誌第1期《血戰古寧頭 1949》兵棋雜誌 NO.1](https://tw.bid.yahoo.com/item/100426863760)
