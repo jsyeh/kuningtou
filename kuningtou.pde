@@ -43,14 +43,13 @@ void mouseWheel(MouseEvent event) {
       mouseWheel_T = millis();
       mouseWheel_delta = 0;  //滑比較慢 or 手放開時，歸零
     }
-    map_cx = (mouseX - map_dx) / map_scale;
-    map_cy = (mouseY - map_dy) / map_scale;
-    
     mouseWheel_delta += count;
   } else {
-    mouseWheel_delta = count;
+    mouseWheel_delta = count*3;
   }
   
+  map_cx = (mouseX - map_dx) / map_scale;
+  map_cy = (mouseY - map_dy) / map_scale;
   map_scale *= pow(1.01, mouseWheel_delta);
   if(map_scale < 1) map_scale = 1;  // 限制不能太小，畫面才好看
   
